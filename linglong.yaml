@@ -1,0 +1,22 @@
+package:
+  id: libusb-1.0
+  name: libusb-1.0
+  version: 1.0.24
+  kind: lib
+  description: |
+    libusb-1.0.
+
+base:
+  id: org.deepin.base
+  version: 20.5.0
+
+source:
+  kind: git
+  url: https://github.com/deepin-community/libusb-1.0.git
+  version: develop/snipe
+  commit: e2704c50fd09c1b4ef0a698531e387c4d29ac006
+  patch:
+  - 01-linux_usbfs-Fix-parsing-of-descriptors-for-multi-con.patch
+  - 02-linux_usbfs-Gracefully-handle-buggy-devices-with-a-c.patch
+build:
+  kind: autotools
